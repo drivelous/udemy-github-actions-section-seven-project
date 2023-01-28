@@ -43,7 +43,7 @@ jobs:
 
             - name: Upload test report
               uses: actions/upload-artifact@v3
-              if: failure() ${{ steps.run-tests.outputs.conclusion == 'failure' }}
+              if: failure() ${{ steps.run-tests.conclusion }}  == 'failure'
               with:
                   name: test-report
                   path: test.json
